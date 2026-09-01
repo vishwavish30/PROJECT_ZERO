@@ -1,0 +1,102 @@
+:root {
+  /* ========================================
+     PROJECT_ZERO — CORE COLORS
+     ======================================== */
+
+  --pz-void: #05060a;
+  --pz-surface: #0a0d14;
+  --pz-surface-soft: #0e121c;
+
+  --pz-text: #f4f7ff;
+  --pz-text-muted: #8b95a7;
+  --pz-text-dim: #566174;
+
+  --pz-cyan: #35e7ff;
+  --pz-violet: #7c5cff;
+  --pz-magenta: #d946ef;
+
+  --pz-border: rgba(255, 255, 255, 0.08);
+
+  /* ========================================
+     PROJECT_ZERO — GLOW SYSTEM
+     ======================================== */
+
+  --pz-glow-cyan: 0 0 30px rgba(53, 231, 255, 0.18);
+  --pz-glow-violet: 0 0 30px rgba(124, 92, 255, 0.18);
+
+  /* ========================================
+     PROJECT_ZERO — TYPOGRAPHY
+     ======================================== */
+
+  --font-display: 'Inter', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  /* ========================================
+     PROJECT_ZERO — LAYOUT
+     ======================================== */
+
+  --container-width: 1400px;
+  --page-padding: 32px;
+
+  /* ========================================
+     PROJECT_ZERO — MOTION
+     ======================================== */
+
+  --ease-smooth: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-sharp: cubic-bezier(0.16, 1, 0.3, 1);
+
+  font-family: var(--font-body);
+  color: var(--pz-text);
+  background: var(--pz-void);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  background: var(--pz-void);
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background: var(--pz-void);
+  color: var(--pz-text);
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+::selection {
+  background: var(--pz-cyan);
+  color: var(--pz-void);
+}
+
+#root {
+  min-height: 100vh;
+}

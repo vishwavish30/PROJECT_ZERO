@@ -1,0 +1,151 @@
+.project-zero {
+  position: relative;
+
+  min-height: 100vh;
+
+  overflow: hidden;
+
+  isolation: isolate;
+
+  background: transparent;
+
+  z-index: 1;
+}
+
+/* ========================================
+   ATMOSPHERE
+   ======================================== */
+
+.atmosphere {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(
+      circle at 15% 20%,
+      rgba(124, 92, 255, 0.12),
+      transparent 32%
+    ),
+    radial-gradient(
+      circle at 85% 70%,
+      rgba(53, 231, 255, 0.09),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 50% 100%,
+      rgba(217, 70, 239, 0.06),
+      transparent 35%
+    );
+}
+
+/* ========================================
+   SYSTEM STATUS
+   ======================================== */
+
+.system-status {
+  position: absolute;
+  top: 32px;
+  left: 32px;
+
+  display: flex;
+  align-items: center;
+  gap: 9px;
+
+  color: var(--pz-text-dim);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--pz-cyan);
+  box-shadow: 0 0 12px rgba(53, 231, 255, 0.8);
+
+  animation: status-pulse 2s ease-in-out infinite;
+}
+
+@keyframes status-pulse {
+  0%,
+  100% {
+    opacity: 0.45;
+    transform: scale(0.85);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* ========================================
+   TEMPORARY HERO
+   ======================================== */
+
+.zero-placeholder {
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  padding: var(--page-padding);
+  max-width: var(--container-width);
+  margin: 0 auto;
+}
+
+.eyebrow {
+  margin-bottom: 24px;
+
+  color: var(--pz-cyan);
+
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.zero-placeholder h1 {
+  margin: 0;
+
+  max-width: 900px;
+
+  color: var(--pz-text);
+
+  font-size: clamp(64px, 10vw, 160px);
+  line-height: 0.86;
+  letter-spacing: -0.07em;
+  font-weight: 700;
+}
+
+.zero-placeholder p {
+  margin-top: 32px;
+
+  color: var(--pz-text-muted);
+
+  font-size: 16px;
+  letter-spacing: 0.02em;
+}
+
+/* ========================================
+   MOBILE
+   ======================================== */
+
+@media (max-width: 768px) {
+  .system-status {
+    top: 20px;
+    left: 20px;
+  }
+
+  .zero-placeholder {
+    padding: 20px;
+  }
+
+  .zero-placeholder h1 {
+    font-size: clamp(56px, 18vw, 100px);
+  }
+}

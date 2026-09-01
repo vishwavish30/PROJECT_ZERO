@@ -1,0 +1,73 @@
+.zero-core-3d {
+  position: relative;
+
+  width: 100%;
+  height: 100%;
+
+  overflow: visible;
+
+  background: transparent;
+
+  pointer-events: auto;
+}
+
+.zero-core-3d canvas {
+  display: block;
+
+  width: 100% !important;
+  height: 100% !important;
+
+  background: transparent !important;
+
+  filter:
+    contrast(1.04)
+    brightness(0.96);
+
+  mix-blend-mode: screen;
+}
+
+
+/* ========================================
+   CORE IDENTITY
+   ======================================== */
+
+.zero-core-3d__label {
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+
+  color: rgba(244, 247, 255, 0.92);
+
+  font-family: var(--font-mono);
+
+  font-size: 17px;
+  font-weight: 500;
+
+  letter-spacing: 0.22em;
+
+  text-shadow:
+    0 0 8px rgba(53, 231, 255, 0.35),
+    0 0 22px rgba(53, 231, 255, 0.15);
+
+  pointer-events: none;
+
+  z-index: 5;
+
+  user-select: none;
+}
+
+
+/* ========================================
+   MOBILE
+   ======================================== */
+
+@media (max-width: 700px) {
+
+  .zero-core-3d__label {
+    font-size: 13px;
+  }
+
+}

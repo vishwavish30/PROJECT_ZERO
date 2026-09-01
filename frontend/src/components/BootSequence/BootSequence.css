@@ -1,0 +1,183 @@
+.boot-sequence .space-field {
+  z-index: 0;
+}
+.boot-sequence {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+
+  display: grid;
+  place-items: center;
+
+  overflow: hidden;
+
+  background: var(--pz-void);
+  color: var(--pz-text);
+}
+
+.boot-sequence__background {
+  position: absolute;
+  inset: 0;
+
+  background:
+    radial-gradient(
+      circle at 50% 42%,
+      rgba(124, 92, 255, 0.13),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 25% 70%,
+      rgba(53, 231, 255, 0.06),
+      transparent 30%
+    );
+
+  pointer-events: none;
+}
+
+.boot-sequence__content {
+  position: relative;
+  z-index: 2;
+
+  width: min(92vw, 900px);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.boot-sequence__label {
+  margin-bottom: 12px;
+
+  color: var(--pz-cyan);
+
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+}
+
+.boot-sequence__core {
+
+  width: 300px;
+  height: 300px;
+
+  margin-top: -25px;
+  margin-bottom: -20px;
+
+  flex-shrink: 0;
+}
+
+/* ========================================
+   DIAGNOSTICS
+   ======================================== */
+
+.boot-sequence__diagnostics {
+  width: min(100%, 420px);
+
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.diagnostic {
+  display: grid;
+  grid-template-columns: 20px 1fr auto;
+
+  align-items: center;
+
+  min-height: 25px;
+
+  color: var(--pz-text-dim);
+
+  transition:
+    color 0.3s ease,
+    opacity 0.3s ease;
+}
+
+.diagnostic--active {
+  color: var(--pz-text);
+}
+
+.diagnostic__indicator {
+  color: var(--pz-cyan);
+}
+
+.diagnostic__status {
+  color: var(--pz-text-dim);
+  font-size: 9px;
+}
+
+.diagnostic--active .diagnostic__status {
+  color: var(--pz-cyan);
+}
+
+/* ========================================
+   ACCESS
+   ======================================== */
+
+.boot-sequence__access {
+  margin-top: 35px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  text-align: center;
+}
+
+.boot-sequence__access span {
+  margin-bottom: 10px;
+
+  color: var(--pz-cyan);
+
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.25em;
+}
+
+.boot-sequence__access strong {
+  font-size: clamp(42px, 8vw, 72px);
+  line-height: 0.9;
+  letter-spacing: -0.06em;
+}
+
+.boot-sequence__access small {
+  margin-top: 14px;
+
+  color: var(--pz-text-muted);
+
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.18em;
+}
+
+/* ========================================
+   MOBILE
+   ======================================== */
+
+@media (max-width: 600px) {
+  .boot-sequence__content {
+    width: calc(100% - 40px);
+  }
+
+  .boot-sequence__core {
+
+    width: 230px;
+    height: 230px;
+
+    transform: scale(0.8);
+
+    margin-top: -55px;
+    margin-bottom: -55px;
+
+  }
+
+  .boot-sequence__diagnostics {
+    width: 100%;
+  }
+}
